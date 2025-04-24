@@ -9,10 +9,9 @@ app.use(express.json())
 app.use(cors())
 
 
-app.post('/usuarios', async (req, res) => { // usado para criar usuarios
+app.post('/usuarios', async (req, res) => { 
 
-    //console.log(req.body)
-    //Salvar os usuarios, em users
+   
     try{
         await prisma.user.create({
             data: {
@@ -31,9 +30,8 @@ app.post('/usuarios', async (req, res) => { // usado para criar usuarios
 
 })
 
-app.put('/usuarios/:id', async (req, res) => { // usado para criar usuarios
+app.put('/usuarios/:id', async (req, res) => { 
 
-    //Salvar os usuarios, em users
 
     await prisma.user.update({
         where: {
@@ -54,7 +52,6 @@ app.put('/usuarios/:id', async (req, res) => { // usado para criar usuarios
 
 app.get('/usuarios', async (req, res) => {
 
-    //console.log(req)
     let users = []
 
     if(req.query){
@@ -70,7 +67,7 @@ app.get('/usuarios', async (req, res) => {
 
 
     res.status(200).json(users)
-}) //Listar os usuarios
+}) 
 
 app.delete('/usuarios/:id', async (req, res) => {
 
@@ -87,14 +84,3 @@ app.delete('/usuarios/:id', async (req, res) => {
 
 app.listen(3000)
 
-/*
-    Funções da API
-
-    -Criar user
-    -listar user
-    -Editar user
-    -Deletar user
-
-    user: gustavobraga
-    pass: KZEtgHoRXVWwWmk8
-*/

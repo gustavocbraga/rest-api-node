@@ -51,9 +51,7 @@ function Home() {
     }, [])
 
     return (
-        /*<div>
-          <h1>Olá</h1>
-        </div>*/
+        
 
         <div className="container">
             <h1>Cadastro</h1>
@@ -66,7 +64,7 @@ function Home() {
                 <input type="email" id="email" name="email" placeholder="Digite seu email" ref={inputEmail}/>
 
 
-                {/* Botão Cadastrar */}
+                {/* Register button */}
                 <button type="button" onClick={() => {createUsers(); 
                     document.getElementById('nome').value = '';document.getElementById('idade').value = '';document.getElementById('email').value = '';}}>Cadastrar</button>
             </form>
